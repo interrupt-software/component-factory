@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 01</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="box-wrapper"></div>
+
+    <script>
+
+        function createContentBox(parentElement, level, contentText) {
+            try {
+                if (!parentElement) {
+                    throw new Error('No parent element provided');
+                }
+
+                // Create the main box container
+                const box = document.createElement('div');
+                box.classList.add('box', `${level}`);
+                parentElement.appendChild(box);
+
+                // Create the title section
+                const title = document.createElement('div');
+                title.classList.add('title');
+                box.appendChild(title);
+
+                if (level === 'one') {
+                    const header = document.createElement('h1');
+                    header.textContent = `Level 1`;
+                    title.appendChild(header);
+                } else if (level === 'two') {
+                    const header = document.createElement('h2');
+                    header.textContent = `Level 2`;
+                    title.appendChild(header);
+                } else if (level === 'three') {
+                    const header = document.createElement('h3');
+                    header.textContent = `Level 3`;
+                    title.appendChild(header);
+                } else {
+                    throw new Error('Invalid level provided');
+                }
+
+                // Create the description section
+                const description = document.createElement('div');
+                description.classList.add('description');
+                box.appendChild(description);
+
+                const paragraph = document.createElement('p');
+                paragraph.textContent = contentText;
+                description.appendChild(paragraph);
+
+                if (level === 'one' || level === 'two') {
+                    // Create the material section
+                    const material = document.createElement('div');
+                    material.classList.add('material');
+                    box.appendChild(material);
+                }
+
+            } catch (error) {
+                console.error('Failed to create content box:', error);
+            }
+        }
+
+        const boxWrapper = document.querySelector('.box-wrapper');
+        createContentBox(boxWrapper, 'one', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi fuga reiciendis molestiae! Minima, nemo aut hic quos, alias atque amet corporis quia mollitia, nostrum tempora illum iure unde iusto qui?');
+
+        const boxOne = document.querySelector('.one');
+        const materialOne = boxOne.querySelector('.material');
+        createContentBox(materialOne, 'two', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi fuga reiciendis molestiae!');
+
+        const boxTwo = document.querySelector('.two');
+        const materialTwo = boxTwo.querySelector('.material');
+        createContentBox(materialTwo, 'three', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.');
+        createContentBox(materialTwo, 'three', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.');
+    </script>
+
+</body>
+
+</html>

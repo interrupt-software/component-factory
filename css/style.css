@@ -1,0 +1,136 @@
+:root {
+    --level-1: 42px;
+    --level-2: 30px;
+    --level-3: 24px;
+    --level-4: 18px;
+
+    --level-1-offset: calc(calc(calc(var(--level-1) * 1.5) - var(--level-1)));
+    --level-2-offset: calc(calc(calc(var(--level-2) * 1.5) - var(--level-2)));
+    --level-3-offset: calc(calc(calc(var(--level-3) * 1.5) - var(--level-3)));
+    --level-4-offset: calc(calc(calc(var(--level-4) * 1.5) - var(--level-4)));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+.box-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 800px;
+    width: 80%;
+    aspect-ratio: 16 / 9;
+    /* border: 1px #222 dotted; */
+}
+
+.box {
+    margin: 0;
+    padding: 0;
+
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(89, 105, 121, 0.5);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(89, 105, 121, 0.5);
+    box-shadow: 1px 1px 5px 1px rgba(89, 105, 121, 0.5);
+
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.material {
+    padding-bottom: var(--level-1);
+    margin: 0 var(--level-1) 0;
+    width: calc(100% - calc(var(--level-1) * 2));
+    display: flex;
+    justify-content: space-around;
+}
+
+.one {
+    background-color: #E1EBEF;
+    /* border: 1px #111 dotted; */
+    max-height: calc(800px - calc(var(--level-1) * 2));
+    aspect-ratio: 3 / 4;
+    border-radius: calc(var(--level-1) / 2);
+    /* background-image: url(img/bg-01.svg); */
+}
+
+.two {
+    background-color: #E1EBEF;
+    /* border: 1px #555 dotted; */
+    max-height: calc(700px - calc(var(--level-2) * 2));
+    border-radius: calc(var(--level-2) / 2);
+    /* background-image: url(img/bg-02.svg); */
+}
+
+.three {
+    /* border: 1px #999 dotted; */
+    background-color: #E1EBEF;
+    max-height: calc(600px - calc(var(--level-3) * 2));
+    border-radius: calc(var(--level-3) / 2);
+    /* background-image: url(img/bg-03.svg); */
+    width: 45%;
+}
+
+.one .title {
+    padding: 0;
+    margin: 0;
+    margin: calc(calc(var(--level-1) - calc(var(--level-1-offset)/1.5)) - 1px) calc(var(--level-1) - 2px) 0;
+    width: calc(100% - calc(var(--level-1) * 2));
+}
+
+.two .title {
+    padding: 0;
+    margin: calc(calc(var(--level-2) - calc(var(--level-2-offset)/1.5)) - 1px) calc(var(--level-2) - 2px) 0;
+    width: calc(100% - calc(var(--level-2) * 2));
+}
+
+.three .title {
+    padding: 0;
+    margin: calc(calc(var(--level-3) - calc(var(--level-3-offset)/1.5)) - 1px) calc(var(--level-3) - 2px) 0;
+    width: calc(100% - calc(var(--level-3) * 2));
+}
+
+.one .title h1 {
+    font-size: var(--level-1);
+}
+
+.two .title h2 {
+    font-size: var(--level-2);
+}
+
+.three .title h3 {
+    font-size: var(--level-3);
+}
+
+.one .description {
+    padding: 0;
+    margin: 0 var(--level-1) var(--level-1-offset);
+    width: calc(100% - calc(var(--level-1) * 2));
+}
+
+.two .description {
+    padding: 0;
+    margin: 0 var(--level-2) var(--level-2-offset);
+    width: calc(100% - calc(var(--level-2) * 2));
+}
+
+.three .description {
+    padding: 0;
+    margin: 0 var(--level-3) var(--level-3-offset);
+    width: calc(100% - calc(var(--level-3) * 2));
+}
+
+.description p {
+    font-size: var(--level-4);
+}

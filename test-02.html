@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 01</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="box-wrapper"></div>
+
+    <script>
+        const boxWrapper = document.querySelector('.box-wrapper');
+
+        // Level 1
+        const boxOne = document.createElement('div');
+        boxOne.classList.add('box', 'one');
+        boxWrapper.appendChild(boxOne);
+
+        const titleOne = document.createElement('div');
+        titleOne.classList.add('title');
+        boxOne.appendChild(titleOne);
+
+        const h1One = document.createElement('h1');
+        h1One.textContent = 'Level 1';
+        titleOne.appendChild(h1One);
+
+        const descriptionOne = document.createElement('div');
+        descriptionOne.classList.add('description');
+        boxOne.appendChild(descriptionOne);
+
+        const pOne = document.createElement('p');
+        pOne.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi fuga reiciendis molestiae! Minima, nemo aut hic quos, alias atque amet corporis quia mollitia, nostrum tempora illum iure unde iusto qui?';
+        descriptionOne.appendChild(pOne);
+
+        const materialOne = document.createElement('div');
+        materialOne.classList.add('material');
+        boxOne.appendChild(materialOne);
+
+        // Level 2
+        const boxTwo = document.createElement('div');
+        boxTwo.classList.add('box', 'two');
+        materialOne.appendChild(boxTwo);
+
+        const titleTwo = document.createElement('div');
+        titleTwo.classList.add('title');
+        boxTwo.appendChild(titleTwo);
+
+        const h2Two = document.createElement('h2');
+        h2Two.textContent = 'Level 2';
+        titleTwo.appendChild(h2Two);
+
+        const descriptionTwo = document.createElement('div');
+        descriptionTwo.classList.add('description');
+        boxTwo.appendChild(descriptionTwo);
+
+        const pTwo = document.createElement('p');
+        pTwo.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi fuga reiciendis molestiae!';
+        descriptionTwo.appendChild(pTwo);
+
+        const materialTwo = document.createElement('div');
+        materialTwo.classList.add('material');
+        boxTwo.appendChild(materialTwo);
+
+        // Level 3
+        const boxThreeOne = document.createElement('div');
+        boxThreeOne.classList.add('box', 'three');
+        materialTwo.appendChild(boxThreeOne);
+
+        const titleThreeOne = document.createElement('div');
+        titleThreeOne.classList.add('title');
+        boxThreeOne.appendChild(titleThreeOne);
+
+        const h3ThreeOne = document.createElement('h3');
+        h3ThreeOne.textContent = 'Level 3';
+        titleThreeOne.appendChild(h3ThreeOne);
+
+        const descriptionThreeOne = document.createElement('div');
+        descriptionThreeOne.classList.add('description');
+        boxThreeOne.appendChild(descriptionThreeOne);
+
+        const pThreeOne = document.createElement('p');
+        pThreeOne.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.';
+        descriptionThreeOne.appendChild(pThreeOne);
+
+        // Level 3
+        const boxThreeTwo = document.createElement('div');
+        boxThreeTwo.classList.add('box', 'three');
+        materialTwo.appendChild(boxThreeTwo);
+
+        const titleThreeTwo = document.createElement('div');
+        titleThreeTwo.classList.add('title');
+        boxThreeTwo.appendChild(titleThreeTwo);
+
+        const h3ThreeTwo = document.createElement('h3');
+        h3ThreeTwo.textContent = 'Level 3';
+        titleThreeTwo.appendChild(h3ThreeTwo);
+
+        const descriptionThreeTwo = document.createElement('div');
+        descriptionThreeTwo.classList.add('description');
+        boxThreeTwo.appendChild(descriptionThreeTwo);
+
+        const pThreeTwo = document.createElement('p');
+        pThreeTwo.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.';
+        descriptionThreeTwo.appendChild(pThreeTwo);
+
+    </script>
+
+</body>
+
+</html>

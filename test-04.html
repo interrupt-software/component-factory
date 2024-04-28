@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 01</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="box-wrapper"></div>
+
+    <script>
+
+        /**
+        * Generates a unique ID of the specified length.
+        * @param {number} length - The length of the generated ID.
+        * @returns {string} - The generated unique ID.
+        */
+        function generateUniqueId(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return result;
+        }
+
+        /**
+         * Creates a content box element based on the provided level and content text.
+         *
+         * @param {string} level - The level of the content box (one, two, or three).
+         * @param {string} contentText - The text content to be displayed in the description section.
+         * @returns {HTMLElement} - The created content box element.
+         * @throws {Error} - If an invalid level is provided.
+         */
+        function createContentBox(level, contentText) {
+            let box = null; // This will hold the reference to the top-level 'box' div
+
+            // Generate a unique identifier using the current timestamp
+            const uniqueId = `${level}-${generateUniqueId(6)}`; // 6 characters long
+
+            // Create the main box container
+            box = document.createElement('div');
+            box.id = `box-${uniqueId}`; // Assign an ID based on the level
+            box.classList.add('box', `${level}`);
+
+            // Create the title section
+            const title = document.createElement('div');
+            title.id = `title-${uniqueId}`; // Assign an ID to the title div
+            title.classList.add('title');
+            box.appendChild(title);
+
+            let header;
+            switch (level) {
+                case 'one':
+                    header = document.createElement('h1');
+                    header.textContent = 'Level 1';
+                    break;
+                case 'two':
+                    header = document.createElement('h2');
+                    header.textContent = 'Level 2';
+                    break;
+                case 'three':
+                    header = document.createElement('h3');
+                    header.textContent = 'Level 3';
+                    break;
+                default:
+                    throw new Error('Invalid level provided');
+            }
+            title.appendChild(header);
+
+            // Create the description section
+            const description = document.createElement('div');
+            description.id = `description-${uniqueId}`; // Assign an ID to the description div
+            description.classList.add('description');
+            box.appendChild(description);
+
+            const paragraph = document.createElement('p');
+            paragraph.textContent = contentText;
+            description.appendChild(paragraph);
+
+            if (level === 'one' || level === 'two') {
+                // Create the material section
+                const material = document.createElement('div');
+                material.id = `material-${uniqueId}`; // Assign an ID to the material div
+                material.classList.add('material');
+                box.appendChild(material);
+            }
+
+            return box; // Return the top-level 'box' div
+        }
+
+        const boxWrapper = document.querySelector('.box-wrapper');
+        const boxOne = createContentBox('one', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi fuga reiciendis molestiae! Minima, nemo aut hic quos, alias atque amet corporis quia mollitia, nostrum tempora illum iure unde iusto qui?');
+        boxWrapper.appendChild(boxOne);
+
+        const material_l1 = boxOne.querySelector('.material');
+        material_l1.appendChild(createContentBox('two', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi fuga reiciendis molestiae!'));
+
+        const material_l2 = (boxOne.querySelector('.two')).querySelector('.material');
+        material_l2.appendChild(createContentBox('three', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'));
+        material_l2.appendChild(createContentBox('three', 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'));
+    </script>
+
+</body>
+
+</html>
