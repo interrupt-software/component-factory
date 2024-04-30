@@ -8,6 +8,10 @@
     --level-2-offset: calc(calc(calc(var(--level-2) * 1.5) - var(--level-2)));
     --level-3-offset: calc(calc(calc(var(--level-3) * 1.5) - var(--level-3)));
     --level-4-offset: calc(calc(calc(var(--level-4) * 1.5) - var(--level-4)));
+
+    --box-shadow: 0px 0px 4px 2px rgba(89, 105, 121, 0.5);
+    --box-border: solid 2px #596979;
+    --box-background-color: 225, 235, 239;
 }
 
 * {
@@ -33,71 +37,71 @@ body {
     height: 800px;
     width: 80%;
     aspect-ratio: 16 / 9;
-    /* border: 1px #222 dotted; */
 }
 
 .box {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    align-items: normal;
+    justify-content: center;
+    flex-direction: column;
+    border: var(--box-border);
 
-    -webkit-box-shadow: 1px 1px 5px 1px rgba(89, 105, 121, 0.5);
-    -moz-box-shadow: 1px 1px 5px 1px rgba(89, 105, 121, 0.5);
-    box-shadow: 1px 1px 5px 1px rgba(89, 105, 121, 0.5);
-
-    /* display: flex;
-    flex-direction: column; */
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
 .material {
-    padding-bottom: var(--level-1);
-    margin: 0 var(--level-1) 0;
-    width: calc(100% - calc(var(--level-1) * 2));
     display: flex;
+    align-items: center;
     justify-content: space-around;
+    padding-bottom: var(--level-1);
+    flex-wrap: wrap;
+    row-gap: var(--level-1);
 }
 
 .one {
-    background-color: #E1EBEF;
-    /* border: 1px #111 dotted; */
-    max-height: calc(800px - calc(var(--level-1) * 2));
-    aspect-ratio: 3 / 4;
+    background-color: rgba(var(--box-background-color), 0.25);
+    max-width: calc(var(--level-1) * 15);
     border-radius: calc(var(--level-1) / 2);
-    /* background-image: url(img/bg-01.svg); */
+    padding-top: calc(calc(var(--level-1) - calc(var(--level-1-offset)/1.5)));
+    padding-left: calc(var(--level-1));
+    /* background-image: url(../img/bg-01.svg); */
 }
 
 .two {
-    background-color: #E1EBEF;
-    /* border: 1px #555 dotted; */
-    max-height: calc(700px - calc(var(--level-2) * 2));
+    background-color: rgba(var(--box-background-color), 0.25);
     border-radius: calc(var(--level-2) / 2);
-    /* background-image: url(img/bg-02.svg); */
+    padding-top: calc(calc(var(--level-2) - calc(var(--level-2-offset)/1.5)));
+    padding-left: calc(var(--level-2));
+    /* background-image: url(../img/bg-02.svg); */
 }
 
 .three {
-    /* border: 1px #999 dotted; */
-    background-color: #E1EBEF;
-    max-height: calc(600px - calc(var(--level-3) * 2));
+    background-color: rgba(var(--box-background-color), 1.0);
+    width: calc(var(--level-3) * 8);
+    max-width: calc(var(--level-3) * 8);
     border-radius: calc(var(--level-3) / 2);
-    /* background-image: url(img/bg-03.svg); */
-    width: 45%;
+    padding-top: calc(calc(var(--level-3) - calc(var(--level-3-offset)/1.5)));
+    padding-left: calc(var(--level-3));
+    /* background-image: url(../img/bg-03.svg); */
 }
 
 .one .title {
-    padding: 0;
-    margin: 0;
-    margin: calc(calc(var(--level-1) - calc(var(--level-1-offset)/1.5)) - 1px) calc(var(--level-1) - 2px) 0;
+    margin-left: -2.5px;
+    margin-top: -1.5px;
     width: calc(100% - calc(var(--level-1) * 2));
 }
 
 .two .title {
-    padding: 0;
-    margin: calc(calc(var(--level-2) - calc(var(--level-2-offset)/1.5)) - 1px) calc(var(--level-2) - 2px) 0;
+    margin-left: -1.75px;
+    margin-top: -1.5px;
     width: calc(100% - calc(var(--level-2) * 2));
 }
 
 .three .title {
-    padding: 0;
-    margin: calc(calc(var(--level-3) - calc(var(--level-3-offset)/1.5)) - 1px) calc(var(--level-3) - 2px) 0;
+    margin-left: -1.5px;
+    margin-top: -1px;
     width: calc(100% - calc(var(--level-3) * 2));
 }
 
@@ -114,21 +118,26 @@ body {
 }
 
 .one .description {
-    padding: 0;
-    margin: 0 var(--level-1) var(--level-1-offset);
     width: calc(100% - calc(var(--level-1) * 2));
+    padding-bottom: var(--level-1-offset);
 }
 
 .two .description {
-    padding: 0;
-    margin: 0 var(--level-2) var(--level-2-offset);
     width: calc(100% - calc(var(--level-2) * 2));
+    padding-bottom: var(--level-2-offset);
 }
 
 .three .description {
-    padding: 0;
-    margin: 0 var(--level-3) var(--level-3-offset);
     width: calc(100% - calc(var(--level-3) * 2));
+    padding-bottom: var(--level-3-offset);
+}
+
+.one .material {
+    max-width: calc(var(--level-1) * 14);
+}
+
+.two .material {
+    width: calc(100% - calc(var(--level-2) * 1));
 }
 
 .description p {

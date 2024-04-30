@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>gb-02</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="gb-02" stroke="#979797">
-            <path d="M29.5,0.5 L29.5,29.5 L0.5,29.5 L0.5,0.5 L29.5,0.5 Z" id="Path"></path>
-            <g id="Group" transform="translate(0, 2.1429)">
-                <path d="M3.17206578e-16,7.31934408 C1.42857143,7.31934408 2.14285714,7.31934408 2.14285714,7.31934408" id="Path-2"></path>
-                <path d="M0,3.82017788 C1.42857143,3.82017788 2.14285714,3.82017788 2.14285714,3.82017788" id="Path-2"></path>
-                <path d="M0,0.321011673 C1.42857143,0.321011673 2.14285714,0.321011673 2.14285714,0.321011673" id="Path-2"></path>
-                <path d="M0,10.8185103 C1.42857143,10.8185103 2.14285714,10.8185103 2.14285714,10.8185103" id="Path-2"></path>
-                <path d="M0,14.3176765 C1.42857143,14.3176765 2.14285714,14.3176765 2.14285714,14.3176765" id="Path-2"></path>
-                <path d="M0,24.8151751 C1.42857143,24.8151751 2.14285714,24.8151751 2.14285714,24.8151751" id="Path-2"></path>
-                <path d="M0,21.3160089 C1.42857143,21.3160089 2.14285714,21.3160089 2.14285714,21.3160089" id="Path-2"></path>
-                <path d="M0,17.8168427 C1.42857143,17.8168427 2.14285714,17.8168427 2.14285714,17.8168427" id="Path-2"></path>
-            </g>
+        <g>
+            <path d="M 0 0 L 30 0" stroke="rgba(33,151,201, 1)" stroke-width="0.5"></path>
+            <path d="M 0 6 L 30 6" stroke="rgba(33,151,201, 0.3)" stroke-width="0.3"></path>
+            <path d="M 0 12 L 30 12" stroke="rgba(33,151,201, 0.3)" stroke-width="0.3"></path>
+            <path d="M 0 18 L 30 18" stroke="rgba(33,151,201, 0.3)" stroke-width="0.3"></path>
+            <path d="M 0 24 L 30 24" stroke="rgba(33,151,201, 0.3)" stroke-width="0.3"></path>
+        </g>
+        <g>
+            <path d="M 0 0 L 0 30" stroke="rgba(33,151,201)" stroke-width="0.5"></path>
+            <path d="M 6 0 L 6 30" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+            <path d="M 12 0 L 12 30" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+            <path d="M 18 0 L 18 30" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+            <path d="M 24 0 L 24 30" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+            <path d="M 30 0 L 30 30" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
         </g>
     </g>
 </svg>

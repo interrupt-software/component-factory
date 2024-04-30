@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 01</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="box-wrapper">
+    </div>
+
+    <script>
+
+        /**
+         * Creates a UI component based on the provided props object.
+         *
+         * @param {Object} props - The props object containing the configuration for the UI component.
+         * @param {string} props.tag - The HTML tag name for the main element of the UI component.
+         * @param {string} [props.id] - The ID attribute for the main element (optional).
+         * @param {Array<string>} [props.classes] - An array of CSS classes to be added to the main element (optional).
+         * @param {Object} [props.styles] - An object containing CSS styles to be applied to the main element (optional).
+         * @param {Object} [props.attributes] - An object containing additional attributes to be set on the main element (optional).
+         * @param {string} [props.content] - The content to be set inside the main element (optional).
+         * @param {Array<Object>} [props.children] - An array of child props objects to create and append child elements (optional).
+         * @returns {HTMLElement} - The created UI component as an HTML element.
+         * @throws {Error} - If the props object is invalid or does not contain a 'tag' property.
+         */
+
+        function createUIComponent(props) {
+            if (!props || !props.tag) {
+                throw new Error("Invalid props object: Must contain a 'tag' property.");
+            }
+
+            // Create the main element using the specified tag
+            const element = document.createElement(props.tag);
+
+            // Add an ID if provided
+            if (props.id) {
+                element.id = props.id;
+            }
+
+            // Add classes if provided
+            if (props.classes) {
+                element.classList.add(...props.classes);
+            }
+
+            // Set styles if provided
+            if (props.styles) {
+                for (const [key, value] of Object.entries(props.styles)) {
+                    element.style[key] = value;
+                }
+            }
+
+            // Set attributes if provided
+            if (props.attributes) {
+                for (const [key, value] of Object.entries(props.attributes)) {
+                    element.setAttribute(key, value);
+                }
+            }
+
+            // Set content if provided
+            if (props.content) {
+                if (props.tag === 'img') {
+                    element.src = props.content;
+                } else {
+                    element.textContent = props.content;
+                }
+            }
+
+            // Recursively create and append children if provided
+            if (props.children) {
+                props.children.forEach(childProps => {
+                    const childElement = createUIComponent(childProps);
+                    element.appendChild(childElement);
+                });
+            }
+
+            return element;
+        }
+
+        const props = {
+            tag: 'div',
+            id: 'parent-div',
+            classes: ['box', 'level-one'],
+            styles: {
+                border: '1px solid #000',
+                padding: '10px'
+            },
+            content: 'Parent Component',
+            children: [
+                {
+                    tag: 'div',
+                    id: 'child-title',
+                    classes: ['title'],
+                    content: 'Child Title',
+                },
+                {
+                    tag: 'div',
+                    id: 'child-description',
+                    classes: ['description'],
+                    content: 'This is a description of the child component.',
+                    children: [
+                        {
+                            tag: 'p',
+                            content: 'Nested paragraph content.',
+                        }
+                    ],
+                },
+            ],
+        };
+
+        const boxWrapper = document.querySelector('.box-wrapper');
+        const component = createUIComponent(props);
+        boxWrapper.appendChild(component);
+
+    </script>
+
+</body>
+
+</html>

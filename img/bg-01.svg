@@ -1,6 +1,33 @@
-<svg width="42" height="42" xmlns="http://www.w3.org/2000/svg">
-    <g stroke="#979797" fill="none" fill-rule="evenodd">
-        <path
-            d="M41.5.5v41H.5V.5h41ZM0 13.247h3M0 8.348h3M0 3.45h3M0 18.146h3M0 23.045h3M0 37.741h3M0 32.842h3M0 27.944h3" />
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>bg-01</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g>
+            <path d="M 0 0 L 42 0" stroke="rgba(33,151,201, 1)" stroke-width="0.5"></path>
+            <path d="M 0 6 L 42 6" stroke="rgba(33,151,201,0.3)" stroke-width="0.25"></path>
+            <path d="M 0 12 L 42 12" stroke="rgba(33,151,201,0.3)" stroke-width="0.25"></path>
+            <path d="M 0 18 L 42 18" stroke="rgba(33,151,201,0.3)" stroke-width="0.25"></path>
+            <path d="M 0 24 L 42 24" stroke="rgba(33,151,201,0.3)" stroke-width="0.25"></path>
+            <path d="M 0 30 L 42 30" stroke="rgba(33,151,201,0.3)" stroke-width="0.25"></path>
+            <path d="M 0 36 L 42 36" stroke="rgba(33,151,201,0.3)" stroke-width="0.25"></path>
+        </g>
+
+        <g>
+            <path d="M 0 0 L 0 42" stroke="rgba(33,151,201)" stroke-width="0.5"></path>
+            <path d="M 6 0 L 6 42" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+            <path d="M 12 0 L 12 42" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+            <path d="M 18 0 L 18 42" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+            <path d="M 24 0 L 24 42" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+            <path d="M 30 0 L 30 42" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+            <path d="M 36 0 L 36 42" stroke="rgba(33,151,201, 0.3)" stroke-width="0.25"></path>
+        </g>
+        <g stroke="rgba(33,151,201,0.3)" stroke-width="0.25">
+            <circle cx="0" cy="0" r="20.75" />
+            <circle cx="0" cy="42" r="20.75" />
+            <circle cx="42" cy="0" r="20.75" />
+            <circle cx="42" cy="42" r="20.75" />
+            <circle cx="21" cy="21" r="20.75" />
+        </g>
     </g>
 </svg>
